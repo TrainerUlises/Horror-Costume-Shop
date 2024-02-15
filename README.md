@@ -1,1 +1,3 @@
 # Horror-Costume-Shop
+
+DEVELOPER: ULISES ROMERO
