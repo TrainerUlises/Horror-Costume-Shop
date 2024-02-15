@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This horror website sells exclusive Halloween costumes and accessories">
+
+    <script src="js/cookiemanager.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <title>NYC Infamous Scare Shop</title>
+
+    <link rel="stylesheet" type="text/css" href="halloween.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        #mainHeader {
+            color: #ffffff;
+            background-color: #FFA500;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        #navbar {
+            background-color: #1E1E1E;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        #navbar ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #navbar li {
+            margin-right: 20px;
+        }
+
+        #navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        #navbar a:hover {
+            color: #FFA500;
+        }
+
+        #wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #1E1E1E;
+            border: 2px solid #FFA500;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            max-width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border: 2px solid #FFA500;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .product-card h4 {
+            color: #FFA500;
+            margin: 10px 0;
+        }
+
+        .product-card h4,
+        .product-card p {
+            margin: 0;
+        }
+
+        .button {
+            background-color: #0088cc;
+            color: white;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card-details {
+            display: none;
+            text-align: left;
+        }
+
+        .product-card:hover .product-card-details {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="mainHeader">
+        <div class="container">
+            <h1>NYC Infamous Scare Shop: SCARY OUTFIT</h1>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="halloween.html">MAIN MENU</a></li>
+                <li><a href="contactUs.html">CONTACT US</a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+                <li><a href="buyCostumes.html">BUY SCARY OUTFIT</a></li>
+                <li><a href="buyMasks.html">BUY MASKS</a></li>
+                <li><a href="buyProps.html">BUY ACCESSORIES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="registration.html">REGISTER</a></li>
+                <li><a href="cart.html">SHOPPING CART</a></li>
+                <li><a href="logoff.html">LOGOFF</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div id="wrapper">
+            <div class="product-card">
+                <img src="../Halloween/assets/costumes1.jpg" alt="Duo Costume Pack">
+                <h4>DUO COSTUME PACK</h4>
+                <h4>PRICE: $18.99</h4>
+             
+                <button class="button" onclick="addItemToCart('Duo costume')">Add to cart</button>
+                <div class="product-card-details">
+                    <h2>MAKE THIS A MEMORABLE HALLOWEEN!</h2>
+                    <p><b>CHOOSE THIS DUO COSTUME PACK FOR A SPOOKY TWIST</b></p>
+                    <p><b>PERFECT FOR PAIRS AND GROUPS</b></p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../Halloween/assets/costumes2.jpg" alt="Witch Costume">
+                <h4>WITCH COSTUME</h4>
+                <h4>PRICE: $12.99</h4>
+                
+                <button class="button" onclick="addItemToCart('Witch Costume')">Add to cart</button>
+                <div class="product-card-details">
+                    <h2>WITCH COSTUME</h2>
+                    <p><b>CAST A SPELL WITH THIS ENCHANTING WITCH COSTUME</b></p>
+                    <p><b>COMPLETE WITH A POINTED HAT AND MYSTERIOUS AURA</b></p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../Halloween/assets/costumes3.jpg" alt="Children Horror Outfit">
+                <h4>CHILDREN HORROR OUTFIT</h4>
+                <h4>PRICE: $12.99</h4>
+                
+                <button class="button" onclick="addItemToCart('childrenhorror')">Add to cart</button>
+                <div class="product-card-details">
+                    <h2>CHILDREN HORROR OUTFIT</h2>
+                    <p><b>MAKE HALLOWEEN MEMORABLE WITH THIS SPOOKY CHILDREN'S COSTUME</b></p>
+                    <p><b>SAFE AND FUN FOR THE LITTLE ONES</b></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function addItemToCart(itemCode) {
+            let cart = new ShoppingCart(getCookie('whoami'));
+            cart.addItem(itemCode);
+            location.reload(); 
+        }
+    </script>
+
+    <footer>
+        
+    </footer>
+</body>
+
+</html>

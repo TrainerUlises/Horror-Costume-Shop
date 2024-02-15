@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This horror website sells exclusive Halloween costumes and accessories">
+    <title>NYC Infamous Scare Shop</title>
+    <link rel="stylesheet" type="text/css" href="halloween.css" />
+    <script src="js/cookiemanager.js"></script>
+    <script src="js/validation.js"></script>
+    <script>
+        function logoff() {
+            setCookie("flag", "", -1);
+            setCookie("whoami", "", -1);
+            location.href = "login.html";
+        }
+    </script>
+</head>
+
+<body>
+    <header id="mainHeader">
+        <div class="container">
+            <h1>NYC Infamous Scare Shop: LOGGED OFF</h1>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="halloween.html">MAIN MENU</a></li>
+                <li><a href="contactUs.html">CONTACT US</a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+                <li><a href="buyCostumes.html">BUY SCARY OUTFIT</a></li>
+                <li><a href="buyMasks.html">BUY MASKS</a></li>
+                <li><a href="buyProps.html">BUY ACCESSORIES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="registration.html">REGISTER</a></li>
+                <li><a href="cart.html">SHOPPING CART</a></li>
+                <li><a href="logoff.html">LOGOFF</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <form class="my-form">
+                
+                <input class="button" type="button" value="Logoff" name="" onclick="logoff()">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        
+    </footer>
+    
+</body>
+
+</html>
+

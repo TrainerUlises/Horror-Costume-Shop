@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Infamous Scare Shop - Thank You!</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <style>
+        body {
+            background-color: #151515;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #info {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff4500;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #d13400;
+        }
+    </style>
+    <script src="js/cookiemanager.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/catalog.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <h1>THANK YOU FOR YOUR PURCHASE!</h1>
+        <div id="menu">
+            <a href="logoff.html" id="logoffLink">Logoff</a>
+            <a href="aboutUs.html">About</a>
+            <a href="contactUs.html">Contact Us</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="info">Thank you for your order!</div>
+        <a href="halloween.html">Continue Shopping</a>
+    </div>
+
+    <script>
+        function deleteAllCookies() {
+            let x = new ShoppingCart(getCookie('whoami'));
+            x.emptyShoppingCart();
+        }
+        deleteAllCookies();
+    </script>
+</body>
+
+</html>

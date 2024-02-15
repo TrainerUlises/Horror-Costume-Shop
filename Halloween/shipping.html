@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Infamous Scare Shop - Shipping</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <style>
+        body {
+            background-color: #151515;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #555;
+        }
+
+        img {
+            max-width: 100px;
+        }
+
+        #info {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #info2 a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff4500;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #info2 a:hover {
+            background-color: #d13400;
+        }
+    </style>
+    <script src="js/cookiemanager.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/catalog.js"></script>
+</head>
+
+<body onload="loadShippingInfo();" style="background-color: skyblue">
+    <div id="content">
+        <table width="100%" align="center">
+            <tr>
+                <td align="center">NYC Infamous Scare Shop</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="content">
+        <div id="info">
+            <h1>Shipping Information</h1>
+            <textarea id="shippingInfo" placeholder="Enter your shipping information here"></textarea>
+        </div>
+
+        <table>
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="nameInfo" placeholder="Enter your name"></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="emailInfo" placeholder="Enter your email"></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>Number</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="numberInfo" placeholder="Enter your phone number"></td>
+            </tr>
+        </table>
+
+        <div id="info2">
+            <a href='thankyou.html' onclick='placeOrder()'>Place Order</a>
+        </div>
+    </div>
+
+    <script>
+        function loadShippingInfo() {
+        
+        }
+
+        function placeOrder() {
+            var shippingInfo = document.getElementById("shippingInfo").value;
+            var nameInfo = document.getElementById("nameInfo").value;
+            var emailInfo = document.getElementById("emailInfo").value;
+            var numberInfo = document.getElementById("numberInfo").value;
+
+            console.log("Shipping Information:", shippingInfo);
+            console.log("Name:", nameInfo);
+            console.log("Email:", emailInfo);
+            console.log("Number:", numberInfo);
+
+           
+            window.location.href = "thankyou.html";
+        }
+    </script>
+</body>
+
+</html>
+
+

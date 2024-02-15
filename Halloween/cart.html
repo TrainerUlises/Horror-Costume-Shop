@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NYC Infamous Scare Shop</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <link rel="stylesheet" type="text/css" href="halloween.css" />
+    <script src="js/cookiemanager.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+
+<body style="background-color: blue" onload="createCart();">
+    <div id="content" class="contentSection">
+        <span id="menu">
+            <table width="100%" align=center>
+                <tr>
+                    <td align=center>NYC Infamous Scare Shop</td>
+                </tr>
+            </table>
+        </span>
+
+        <span id="menu">
+            <table align=center>
+                <tr>
+                    <td>
+                        <script>
+                            if (getCookie("flag") == "true") document.writeln(`<a href="logoff.html" style="color: #ff4500;">Logoff</a>`);
+                            else document.writeln(`<a href="login.html" style="color: #ff4500;">Login</a>`);
+                        </script>
+                    </td>
+                    <td width='100' align=center><a href='aboutUs.html' style="color: #ff4500;">About Us</a></td>
+                    <td width='100' align=center><a href='buyCostumes.html' style="color: #ff4500;">Costumes</a></td>
+                    <td width='100' align=center><a href='buyProps.html' style="color: #ff4500;">Accessories</a></td>
+                    <td width='100' align=center><a href='buyMasks.html' style="color: #ff4500;">Masks</a></td>
+                    <td width='100' align=center><a href='contactUs.html' style="color: #ff4500;">Contact Us</a></td>
+                </tr>
+            </table>
+        </span>
+    </div>
+
+    <div id="content" class="contentSection">
+        <div id="info"></div>
+        <div id="info2"></div>
+    </div>
+
+    <script>
+        function delete2(code) {
+            let x = new ShoppingCart(getCookie('whoami'));
+            x.setNumOrdered(code, 0);
+            location.reload();
+        }
+
+        function update(code) {
+            var name = code + "qty";
+            var value = parseInt(document.getElementById(name).value) || 0;
+            let x = new ShoppingCart(getCookie('whoami'));
+            x.setNumOrdered(code, value);
+            location.reload();
+        }
+
+        function createCart() {
+    console.log(getCookie('whoami'));
+    var flag2 = false;
+    var total = 0;
+    var str = "<table>";
+    str += "<tr><th colspan='2' style='color: #ff4500;'>IMAGE</th><th style='color: #ff4500;'>NAME</th><th style='color: #ff4500;'>QUANTITY</th><th style='color: #ff4500;'>PRICE</th><th style='color: #ff4500;'>SUBTOTAL</th></tr>";
+    let x = new ShoppingCart(getCookie('whoami'));
+    let items = x.getItemsOrdered();
+    for (let i = 0; i < items.length; i++) {
+        let qty = items[i].getNumItems();
+        if (qty != null && qty > 0) {
+            var name = items[i].getItemCode() + "qty";
+            var image = items[i].getItemImage();
+
+            str += "<tr>";
+            str += "<td style='text-align:left'>" + "<img width='100px' src='" + image + "' />" + "</td>";
+            str += "<td style='text-align:left;color: #fff;'>" + items[i].getItemName() + "</td>";
+            str += "<td style='text-align:right;color: #fff;'>" +
+                "<input id='" + name + "'type='text' value='" + qty + "' />" +
+                "<input id='" + items[i].getItemCode() + "' type='button' value='update' onclick='update(this.id);' />" +
+                "<img src='images/x.png' width='20px;' onclick=delete2('" + items[i].getItemCode() + "') /></td>";
+            str += "<td style='text-align:right;color: #fff;'>$" + items[i].getUnitCost() + "</td>";
+            str += "<td style='text-align:right;color: #fff;'>$" + items[i].getTotalCost() + "</td>";
+            str += "</tr>";
+            flag2 = true;
+        }
+    }
+    str += "<tr><td colspan='5' style='text-align:left;color: #ff4500;'>TOTAL</td>" +
+        "<td style='text-align:right;color: #ff4500;'>$" + x.getTotalCost() + "</td></tr>";
+    str += "</table>";
+    if (flag2) {
+        document.getElementById("info").innerHTML = str;
+        document.getElementById("info2").innerHTML = "<a href='shipping.html' style='color: #ff4500;'>Shipping Next</a>";
+    } else {
+        document.getElementById("info").innerHTML =
+            "<h1 style='color: #ff4500;'>EMPTY CART<br><a href='buyCostumes.html' style='color: #ff4500;'>Go Back Shopping</a></h1>" +
+            "<h1 style='color: #ff4500;'>EMPTY CART<br><a href='buyProps.html' style='color: #ff4500;'>Go Back Shopping</a></h1>" +
+            "<h1 style='color: #ff4500;'>EMPTY CART<br><a href='buyMasks.html' style='color: #ff4500;'>Go Back Shopping</a></h1>";
+    }
+}
+            str += "<tr><td colspan='4' style='text-align:left;color: #ff4500;'>TOTAL</td>" +
+                "<td style='text-align:right;color: #ff4500;'>$" + x.getTotalCost() + "</td></tr>";
+            str += "</table>";
+            if (flag2) {
+                document.getElementById("info").innerHTML = str;
+                document.getElementById("info2").innerHTML = "<a href='shipping.html' style='color: #ff4500;'>Shipping Next</a>";
+            } else {
+                document.getElementById("info").innerHTML =
+                    "<h1 style='color: #ff4500;'>EMPTY CART<br><a href='buyCostumes.html' style='color: #ff4500;'>Go Back Shopping</a></h1>" +
+                    "<h1 style='color: #ff4500;'>EMPTY CART<br><a href='buyProps.html' style='color: #ff4500;'>Go Back Shopping</a></h1>" +
+                    "<h1 style='color: #ff4500;'>EMPTY CART<br><a href='buyMasks.html' style='color: #ff4500;'>Go Back Shopping</a></h1>";
+            }
+        
+    </script>
+</body>
+
+</html>
+
+
+

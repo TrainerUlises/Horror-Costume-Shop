@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Halloween Shop Login">
+    <title>NYC Infamous Scare Shop Login</title>
+    <link rel="stylesheet" type="text/css" href="halloween.css" />
+</head>
+
+<script src="js/cookiemanager.js"></script>
+<script>
+    function login() {
+        username = document.getElementById("username").value;
+        password = document.getElementById("password").value;
+        pass = getCookie(username);
+        if (pass == null) {
+            alert("User Does not Exist");
+        } else {
+            if (pass == password) {
+                setCookie("flag", "true", 30);
+                setCookie("whoami", username, 30);
+                location.href = "buyCostumes.html";
+            } else {
+                alert("Password is incorrect");
+            }
+        }
+    }
+</script>
+
+<body>
+    <div id="mainHeader">
+        <div class="container">
+            <h1>NYC Infamous Scare Shop</h1>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="halloween.html">MAIN MENU</a></li>
+                <li><a href="contactUs.html">CONTACT US</a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+                <li><a href="buyCostumes.html">BUY SCARY OUTFIT</a></li>
+                <li><a href="buyMasks.html">BUY MASKS</a></li>
+                <li><a href="buyProps.html">BUY ACCESSORIES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="registration.html">REGISTER</a></li>
+                <li><a href="cart.html">SHOPPING CART</a></li>
+                <li><a href="logoff.html">LOGOFF</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <form class="my-form">
+                <div class="form-group">
+                
+                </div>
+                <div class="form-group">
+                    <label>User:</label>
+                    <input type="text" id="username">
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="text" id="password">
+                </div>
+                <input class="button" type="button" value="Login" name="" onclick="login();">
+                <p><span>&nbsp;</span><a href="registration.html">Register</a></p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        
+    </footer>
+
+</body>
+
+</html>

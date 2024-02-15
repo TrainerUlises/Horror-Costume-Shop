@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        table,
+        td,
+        input[type="button"],
+        input[type="text"] {
+            border: solid black 2px;
+            font-size: small;
+        }
+
+        .division {
+            border: solid black 2px;
+            background-color: #CCCCCC;
+            margin: 2px;
+            padding: 1px;
+            font-size: small;
+        }
+
+        th {
+            text-align: center;
+            background: black;
+            color: white;
+            padding: 4px;
+        }
+
+        div.v0 {
+            width: 100%;
+        }
+
+        div.v1 {
+            width: 50%;
+            margin: 0px auto;
+            background-color: #EEEEEE;
+        }
+    </style>
+    <script>
+        function setCookie(name, value, days) {
+            var d = new Date();
+            d.setTime(d.getTime() + (24 * 60 * 60 * 1000 * days));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + "; " + expires + "; path=/";
+            alert(document.cookie);
+        }
+
+        function removeCookie(name) {
+            var d = new Date();
+            d.setTime(d.getTime() + (24 * 60 * 60 * 1000 * (-1)));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=; " + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var x = document.cookie.split("; ");
+            for (var i = 0; i < x.length; i++) {
+                var y = x[i].split("=");
+                if (y[0] == name) return y[1];
+            }
+            return null;
+        }
+
+        function createCookie() {
+            var name = document.getElementById("cname").value;
+            var value = document.getElementById("cvalue").value;
+            setCookie(name, value, 10);
+            dhtml();
+        }
+
+        function readCookie() {
+            var name = document.getElementById("cname2").value;
+            var value = document.getElementById("cvalue2");
+            value.value = getCookie(name);
+        }
+
+        function deleteCookie() {
+            var name = document.getElementById("cname3").value;
+            removeCookie(name);
+            alert('Cookie Deleted...');
+            dhtml();
+        }
+
+        function rawCookie() {
+            document.getElementById("cname4").value = document.cookie;
+        }
+
+        function clearInputs() {
+            var inputs = document.querySelectorAll('input[type="text"]');
+            inputs.forEach(function (input) {
+                input.value = '';
+            });
+        }
+
+        function dhtml() {
+            var A = document.cookie.split("; ");
+            var x = "<table style='width:50%;'>";
+            x += "<tr><th colspan='2'>COOKIE LISTING</th></tr>";
+            x += "<tr><th>NAME</th><th>VALUE</th></tr>";
+            if (document.cookie != "") {
+                for (var i = 0; i < A.length; i++) {
+                    var B = A[i].split("=");
+                    x += "<tr><td style='width:10;'>" + B[0] + "</td><td style='width:10;'>" + B[1] + "</td></tr>";
+                }
+            }
+            x += "</table>";
+            document.getElementById("info").innerHTML = x;
+            clearInputs();
+        }
+    </script>
+    <title>COOKIE MANAGER</title>
+</head>
+
+<body onload="dhtml();">
+    <div class="v0">
+        <div class="v1">
+            <div class="division" style="font-size:1.5em;text-align:center;background:black; color:white;">COOKIE MANAGER
+            </div>
+            <div class="division">
+                Name: <input type="text" size="10" id="cname">
+                Value: <input type="text" size="10" id="cvalue">
+                <input type="button" value="SetCookie" onclick="createCookie();" />
+                <input type="button" value="Clear" onclick="clearInputs();" />
+            </div>
+            <div class="division">
+                Name: <input type="text" size="10" id="cname2">
+                Value: <input type="text" size="10" id="cvalue2" readonly>
+                <input type="button" value="GetCookie" onclick="readCookie();" />
+                <input type="button" value="Clear" onclick="clearInputs();" />
+            </div>
+            <div class="division">
+                Name:<input type="text" size="10" id="cname3">
+                <input type="button" value="DelCookie" onclick="deleteCookie();" />
+                <input type="button" value="DelAllCookies" />
+                <input type="button" value="Clear" onclick="clearInputs();" />
+            </div>
+            <div class="division">
+                <input type="text" size="35" id="cname4">
+                <input type="button" value="RawCookie" onclick="rawCookie();" />
+                <input type="button" value="Clear" onclick="clearInputs();" />
+            </div>
+            <div id='info' class="division"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+

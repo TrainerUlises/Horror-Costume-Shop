@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This horror website sells exclusive Halloween costumes and accessories">
+    <title>NYC Infamous Scare Shop</title>
+    <link rel="stylesheet" type="text/css" href="halloween.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, nav, main, footer {
+            display: block;
+            width: 100%;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.5em 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        main {
+            padding: 20px 0;
+        }
+
+        .my-form {
+            text-align: center;
+        }
+
+        .form-group {
+            margin: 10px 0;
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        .button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var name = document.forms["myForm"]["name"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var message = document.forms["myForm"]["message"].value;
+
+            if (name == "" || email == "" || message == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header id="mainHeader">
+        <div class="container">
+            <h1>NYC Infamous Scare Shop: CONTACT US</h1>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="halloween.html">MAIN MENU</a></li>
+                <li><a href="contactUs.html">CONTACT US</a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+                <li><a href="buyCostumes.html">BUY SCARY OUTFIT</a></li>
+                <li><a href="buyMasks.html">BUY MASKS</a></li>
+                <li><a href="buyProps.html">BUY ACCESSORIES</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="registration.html">REGISTER</a></li>
+                <li><a href="cart.html">SHOPPING CART</a></li>
+                <li><a href="logoff.html">LOGOFF</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <form name="myForm" class="my-form" onsubmit="return validateForm()">
+                <div>
+                    <img src="assets/scooby2.jpeg" height="350" width="550" alt="Contact Image">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea name="message" rows="5"></textarea>
+                </div>
+                <input class="button" type="submit" value="Submit">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

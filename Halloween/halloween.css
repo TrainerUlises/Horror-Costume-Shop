@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    background-image: url(../Halloween/assets/contactUs.jpg);
+}
+
+.button {
+    background-color: #0088cc;
+    color: white;
+    margin-top: 25px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#mainHeader, #secondHeader {
+    color: #ffffff;
+}
+
+#mainHeader {
+    background-color: #FFA500;
+    background-image: url(../Halloween/assets/contactUs.jpg);
+}
+
+#navbar {
+    color: #FFA500;
+    background-color: skyblue;
+    text-align: center;
+}
+
+#navbar ul {
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+#navbar li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#navbar a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 15px;
+}
+
+#navbar a:hover {
+    color: #800080;
+}
+
+#navbar a:active {
+    color: skyblue;
+}
+
+#block1, #block2 {
+    float: left;
+    margin: 20px 0;
+}
+
+#block1 h2, #block2 h2 {
+    text-align: center;
+    padding: 10px;
+    border: 5px white solid;
+    background-color: red;
+    color: white;
+    background-image: url(../Halloween/assets/hotel-wallpaper-black.png);
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    color: #000000;
+}
+
+#wrapper img {
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+#writeOver, #writeOver1, #writeOver2, #writeOver3 {
+    position: absolute;
+    color: white;
+    padding: 10px;
+}
+
+#writeOver {
+    top: 45%;
+    left: 57%;
+}
+
+#writeOver1 {
+    top: 10%;
+    left: 45%;
+}
+
+#writeOver2 {
+    top: 39%;
+    left: 45%;
+}
+
+#writeOver3 {
+    top: 68%;
+    left: 45%;
+}
+
+#aboutBackground {
+    margin-top: 200px;
+    background-color: skyblue;
+    padding: 20px;
+    border: 10px white solid;
+    color: #000000;
+}
+
+.my-form {
+    padding: 100px;
+    color: #FF0000;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 70px;
+    background-image: url(../Halloween/assets/halloween_background.jpg);
+}
+
+.my-form .form-group {
+    padding-top: 15px;
+}
+
+.my-form label {
+    display: block;
+}
+
+.my-form input[type="text"],
+.my-form textarea {
+    padding: 8px;
+    width: 100%;
+}
+
+#buyMasks {
+    background-color: skyblue;
+    width: 50%;
+    margin: 20px;
+    border: 10px white solid;
+    padding: 20px;
+}
+
+#price {
+    background-color: #ffffff;
+}
+
+#buyMasks a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+#buyMasks a:hover {
+    color: red;
+}
+
+#buyMasks a:active {
+    color: skyblue;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    width: 600px;
+    background-color: skyblue;
+}
+
+
+
+
+
+
